@@ -48,7 +48,7 @@ class Home extends Component {
   componentDidMount(): void {
     Animated.timing(this.state.entryAnim, {
       toValue: 0,
-      duration: 600,
+      duration: 500,
       useNativeDriver: true,
     }).start();
   }
