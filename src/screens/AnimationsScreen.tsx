@@ -7,12 +7,9 @@ import {
   View,
   Pressable,
   StyleSheet,
-  Animated, Button,
+  Animated,
+  Button,
 } from 'react-native';
-
-interface AnimationsScreenProps {
-  navigation: NavigationProp<RootStackParams, 'AnimationsScreen'>;
-}
 
 const styles = StyleSheet.create({
   page: {
@@ -36,8 +33,9 @@ const styles = StyleSheet.create({
 
 const items = [
   {title: 'Fade', screen: 'FadeScreen'},
-  {title: 'Scale', screen: 'ScaleScreen'},
+  {title: 'Scale', screen: 'ClockScreen'},
   {title: 'Strava Add Menu', screen: 'StravaAddMenuScreen'},
+  {title: 'Clock', screen: 'ClockScreen'},
 ];
 
 class AnimationsScreen extends Component {

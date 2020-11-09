@@ -6,7 +6,8 @@ import FadeScreen from './screens/FadeScreen';
 import ScaleScreen from './screens/ScaleScreen';
 import StravaAddMenuScreen from './screens/StravaAddMenuScreen';
 import AnimationsScreen from './screens/AnimationsScreen';
-import VideoTestScreen from "./screens/VideoTestScreen";
+import VideoTestScreen from './screens/VideoTestScreen';
+import ClockScreen from './screens/ClockScreen';
 
 interface NavigationProps {}
 
@@ -38,6 +39,7 @@ function Navigation(props: NavigationProps) {
           component={StravaAddMenuScreen}
           name="StravaAddMenuScreen"
         />
+        <Stack.Screen component={ClockScreen} name="ClockScreen" />
       </Stack.Navigator>
     </NavigationContainer>
   );

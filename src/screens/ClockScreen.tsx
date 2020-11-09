@@ -8,11 +8,8 @@ import {
   Text,
   View,
   StyleSheet,
+  Easing,
 } from 'react-native';
-
-interface FadeScreenProps {
-  navigation: NavigationProp<RootStackParams, 'FadeScreen'>;
-}
 
 const styles = StyleSheet.create({
   page: {
@@ -31,25 +28,26 @@ const styles = StyleSheet.create({
   },
 });
 
-class FadeScreen extends Component {
+class ClockScreen extends Component {
   state = {
-    fadeAnim: new Animated.Value(1),
+    rotateAnimation: new Animated.Value(1),
   };
 
-  fadeIn = () => {
-    Animated.timing(this.state.fadeAnim, {
-      toValue: 1,
-      duration: 300,
+  componentDidMount(): void {
+    const animation = Animated.timing(this.state.rotateAnimation, {
+      toValue: 360,
+      duration: 60000,
+      easing: Easing.linear,
       useNativeDriver: true,
-    }).start();
-  };
+    });
+    Animated.loop(animation).start();
+  }
 
-  fadeOut = () => {
-    Animated.timing(this.state.fadeAnim, {
-      toValue: 0,
-      duration: 300,
-      useNativeDriver: true,
-    }).start();
+  rotation = () => {
+    return this.state.rotateAnimation.interpolate({
+      inputRange: [0, 360],
+      outputRange: ['0deg', '360deg'],
+    });
   };
 
   render() {
@@ -62,19 +60,29 @@ class FadeScreen extends Component {
           />
           <Animated.View
             style={{
-              padding: 20,
+              marginTop: 100,
               backgroundColor: 'lightblue',
-              alignItems: 'center',
-              opacity: this.state.fadeAnim,
+              alignItems: 'flex-end',
+              transform: [{rotate: this.rotation()}],
+              width: 150,
+              height: 150,
+              borderRadius: 75,
+              justifyContent: 'center',
+              position: 'relative',
             }}>
-            <Text>Hello World!</Text>
+            <View
+              style={{
+                width: 3,
+                height: 3,
+                backgroundColor: '#000',
+                borderRightWidth: 75,
+              }}
+            />
           </Animated.View>
-          <Button title={'Fade In'} onPress={this.fadeIn} />
-          <Button title={'Fade Out'} onPress={this.fadeOut} />
         </View>
       </SafeAreaView>
     );
   }
 }
 
-export default FadeScreen;
+export default ClockScreen;
