@@ -35,9 +35,8 @@ const styles = StyleSheet.create({
 });
 
 const items = [
-  {title: 'Fade', screen: 'FadeScreen'},
-  {title: 'Scale', screen: 'ScaleScreen'},
-  {title: 'Strava Add Menu', screen: 'StravaAddMenuScreen'},
+  {title: 'Animations', screen: 'AnimationsScreen'},
+  {title: 'Video test', screen: 'VideoTestScreen'},
 ];
 
 class Home extends Component {

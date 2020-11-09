@@ -78,8 +78,8 @@ class StravaAddMenuScreen extends Component {
       <SafeAreaView>
         <View style={styles.page}>
           <Button
-            title={'Back to Home'}
-            onPress={() => this.props.navigation.navigate('HomeScreen')}
+            title={'Back to Animations'}
+            onPress={() => this.props.navigation.navigate('AnimationsScreen')}
           />
           <Pressable
             onPress={this.openMenu}
