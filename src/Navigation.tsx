@@ -8,6 +8,7 @@ import StravaAddMenuScreen from './screens/StravaAddMenuScreen';
 import AnimationsScreen from './screens/AnimationsScreen';
 import VideoTestScreen from './screens/VideoTestScreen';
 import ClockScreen from './screens/ClockScreen';
+import EasingScreen from './screens/EasingScreen';
 
 interface NavigationProps {}
 
@@ -18,6 +19,8 @@ export type RootStackParams = {
   FadeScreen: undefined;
   ScaleScreen: undefined;
   StravaAddMenuScreen: undefined;
+  ClockScreen: undefined;
+  EasingScreen: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParams>();
@@ -40,6 +43,7 @@ function Navigation(props: NavigationProps) {
           name="StravaAddMenuScreen"
         />
         <Stack.Screen component={ClockScreen} name="ClockScreen" />
+        <Stack.Screen component={EasingScreen} name="EasingScreen" />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -33,9 +33,10 @@ const styles = StyleSheet.create({
 
 const items = [
   {title: 'Fade', screen: 'FadeScreen'},
-  {title: 'Scale', screen: 'ClockScreen'},
+  {title: 'Scale', screen: 'ScaleScreen'},
   {title: 'Strava Add Menu', screen: 'StravaAddMenuScreen'},
   {title: 'Clock', screen: 'ClockScreen'},
+  {title: 'Easing', screen: 'EasingScreen'},
 ];
 
 class AnimationsScreen extends Component {
